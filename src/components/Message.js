@@ -10,7 +10,6 @@ const Message = () => {
         author: ''
     })
     const BOT_MESSAGE = 'Сообщение получено'
-    const BOT_MESSAGE2 = 'Сообщение получено pribvet'
 
     useEffect(() => {
         if(messageList.length > 0 && messageList.slice(-1)[0].author != 'Bot'){
