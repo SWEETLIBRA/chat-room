@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/Message.css';
 import FormMessage from './FormMessage';
 import Sms from './Sms';
@@ -22,7 +22,7 @@ const Message = () => {
     return (
         <div className="gide">
             <FormMessage data={messageBody} setData={setMessageBody} setMessage={setMessageList}></FormMessage>
-            <div className='messageList'>
+            <div className='messageList' style={{display: 'flex', flexDirection: 'column',marginLeft: 'auto', marginRight: 'auto', maxWidth: '465px' }}>
                 {
                     messageList.map((e, i) => <Sms text={e.text} author={e.author} key={i}/>)
                 }
