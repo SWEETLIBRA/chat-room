@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// import { List } from '@mui/material';
-// import { ListItem } from '@mui/material';
+import { List } from '@mui/material';
+import { ListItem } from '@mui/material';
 
 const ChatList = () => {
     const [chats, setChats] = useState([
@@ -14,14 +14,15 @@ const ChatList = () => {
         }
     ]) 
     return (
-        <>
-        {chats.map(chat => <h2 key={chat.id} style={{display: 'flex', flexDirection: 'column',width: '100%',maxWidth: '200px',boxSizing: 'border-box', background: 'gray'}}>{chat.name}</h2>)}
             <div>
-                {/* <List>
-                    <ListItem>{chats.name}</ListItem>
-                </List> */}
+                <List sx={{ bgcolor: 'primary.main', display: 'flex', flexDirection: 'column', width: '100%', height: '100vh', maxWidth: '200px', marginTop: '10px' }}>
+                    {chats.map(chat => 
+                    <ListItem key={chat.id} 
+                    >
+                        {`${chat.id}. ${chat.name}`}
+                    </ListItem>)}
+                </List>
             </div>
-        </>
         
     );
 };
