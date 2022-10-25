@@ -21,19 +21,12 @@ const FormMessage = ({data, setData, setMessage, ariaLabel}) => {
     }
     return (
         <form onSubmit={submitForm}>
-            {/* <input placeholder='Name' value={text} onChange={(e) =>
-                setData(prevState => ({...prevState, text: e.target.value}))}
-            /> */}
-            {/* <input placeholder='Text' value={author} onChange={(e) =>
-                setData(prevState => ({...prevState, author: e.target.value}))}
-            /> */}
             <Input autoFocus inputProps={ariaLabel} placeholder='Name' value={text} onChange={(e) =>
                 setData(prevState => ({...prevState, text: e.target.value}))}
             />
              <Input inputProps={ariaLabel} placeholder='Text' value={author} onChange={(e) =>
                 setData(prevState => ({...prevState, author: e.target.value}))}
             />
-            {/* <button type='submit'>Send</button> */}
             <Button type='submit' variant="contained" color="success" style={{height:27}}>Send</Button>
         </form>
     );
