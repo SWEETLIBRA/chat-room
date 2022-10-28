@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { Input, Button } from '@mui/material';
 
-const FormMessage = ({data, setData, setMessage}) => {
+const FormMessage = ({data, setData, setMessage, ariaLabel}) => {
     const {text, author} = data
+    const ref = useRef(null)
+
+    // useEffect(() => {
+    //     ref.current?.focus()
+    // },[ref.current])
+    
     const submitForm = (e) => {
         e.preventDefault()
         if (text.length > 0){
@@ -14,13 +21,20 @@ const FormMessage = ({data, setData, setMessage}) => {
     }
     return (
         <form onSubmit={submitForm}>
-            <input placeholder='Name' value={text} onChange={(e) =>
+            {/* <input placeholder='Name' value={text} onChange={(e) =>
+                setData(prevState => ({...prevState, text: e.target.value}))}
+            /> */}
+            {/* <input placeholder='Text' value={author} onChange={(e) =>
+                setData(prevState => ({...prevState, author: e.target.value}))}
+            /> */}
+            <Input autoFocus inputProps={ariaLabel} placeholder='Name' value={text} onChange={(e) =>
                 setData(prevState => ({...prevState, text: e.target.value}))}
             />
-            <input placeholder='Text' value={author} onChange={(e) =>
+             <Input inputProps={ariaLabel} placeholder='Text' value={author} onChange={(e) =>
                 setData(prevState => ({...prevState, author: e.target.value}))}
             />
-            <button type='submit'>Send</button>
+            {/* <button type='submit'>Send</button> */}
+            <Button type='submit' variant="contained" color="success" style={{height:27}}>Send</Button>
         </form>
     );
 };
