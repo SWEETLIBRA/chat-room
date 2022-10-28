@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import Loader from '../components/Loader'
 import ChatDelete from './ChatDelete';
 import Chat from './Chat'
-import { number } from 'prop-types';
 
 const ChatList = () => {
     const [chats, setChats] = useState([

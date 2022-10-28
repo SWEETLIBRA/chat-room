@@ -6,27 +6,25 @@ import Message from './components/Message';
 import Home from './router/Home';
 import NavBar from './router/NavBar';
 import NotFound from './router/NotFound'
+import Toggler from './store/Toggler';
 
 
 function App() {
   
   return (
-    <BrowserRouter>
       <div className="App">
           {/* <Message/> */}
           {/* <ChatList/> */}
           <NavBar />
           <Routes>
-            <Route path='/' element = {<Home userName={"Пользователь"}/>}/>
+            <Route exact path='/' element = {<Home userName={"Пользователь"}/>}/>
             <Route path='chatList' element={<ChatList/>}>
               <Route path=':chatId' element={<ChatList/>}/>
             </Route>
+            <Route path='profile' element={<Toggler/>}/>
             <Route path='*' element={<NotFound/>}/>
           </Routes>
       </div>
-    </BrowserRouter>
-      
-    
   );
 }
 
