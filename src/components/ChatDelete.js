@@ -6,9 +6,10 @@ const ChatDelete = ({chats}) => {
         <div>
             {chats.map((e, id) =>
                 <div key={id}>
-                    <p className='chatDelete'>❌</p>
+                    {/* <p className='chatDelete'>❌</p> */}
                     <div className='userChats'>
                         <Link to={`${id}`}>{e.name}</Link>
+                        <span className='cross'>❌</span>
                     </div>
                 </div>
             )}
