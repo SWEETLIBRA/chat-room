@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const chatDelete = ({chats}) => {
+const ChatDelete = ({chats}) => {
     return (
         <div>
             {chats.map((e, id) =>
@@ -16,4 +16,4 @@ const chatDelete = ({chats}) => {
     );
 };
 
-export default chatDelete;
+export default ChatDelete;

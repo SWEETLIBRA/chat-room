@@ -5,7 +5,7 @@ const Chat = ({chat}) => {
         <div className='chatItems'>
             {
                 chat.messages.map((e, i) =>
-                    <div className='messageItem'>
+                    <div className='messageItem' key={i}>
                         <h3>{e.author}</h3>
                         <p>{e.text}</p>
                         <p>{e.date}</p>

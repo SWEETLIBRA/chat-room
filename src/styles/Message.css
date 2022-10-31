@@ -1,5 +1,13 @@
-.gide {
+.formMessage {
+    margin: 0px 10px 10px 300px;
     color: rgb(25, 0, 255);
     background: rgba(0, 0, 0, 0.432);
     border-radius: 10px;
+    height: 100%;
+}
+
+.messageList {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
