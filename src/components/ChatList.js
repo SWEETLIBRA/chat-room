@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import Loader from '../components/Loader'
 import ChatDelete from './ChatDelete';
 import Chat from './Chat'
-import { number } from 'prop-types';
 
 const ChatList = () => {
     const [chats, setChats] = useState([
@@ -45,20 +44,13 @@ const ChatList = () => {
             <div style={{display:'flex', flexGrow:1, position:'relative'}}>
                 <WithLoading isLoading = {loading}>
                     <List className='chatList' sx={{ bgcolor: 'primary.main', display: 'flex', flexDirection: 'column', width: '150px', height: '100vh', borderRadius: '5px', overflowX: 'none', overflowY: 'scroll' }}>
-                        <ListItem sx={{}}><h2 className='chats'>Чаты</h2></ListItem>
+                        <ListItem><h2 className='chats'>Чаты</h2></ListItem>
                         <>
                             <ChatDelete chats={chats}/>
                             <Button type='submit' onClick={() => {
                               setChats(p => [...p, chats[0]])  
                             }}>+</Button>
                         </>
-                        
-                        {chats.map(chat => 
-                        <ListItem key={chat.id} 
-                        >
-                            {/* <p className='userChats'>{chat.name}</p> */}
-                        </ListItem>
-                        )}
                     </List>
                     {
                         chatId && chats[chatId] ? <Chat chat={chats[chatId]}/> : <h2>Выберите чат</h2>

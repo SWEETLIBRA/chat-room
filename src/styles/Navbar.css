@@ -40,7 +40,7 @@
   width: 10px;
   height: 20px;
   background-color:rgb(10, 214, 250);
-  margin: 20px auto 0 auto;
+  margin: 5px auto 0 auto;
 }  
  
 .chatList::-webkit-scrollbar {
@@ -56,6 +56,7 @@
 .chats {
     margin-block-start: 0em;
     margin-block-end: 0em;
+    margin-inline-start: 20px;
     color: white; 
 }
 
@@ -68,7 +69,7 @@
     padding-top: 4px;
     box-sizing: border-box;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -98,9 +99,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: brightness(70%);
-  cursor: default;
+  filter: brightness(140%);
+  cursor: pointer;
   margin-block-end: 0.4em;
   margin-top: 4px;
   margin-inline-start: 20px;
+  position: relative;
+}
+
+.cross{
+  position: absolute;
+  font-size: 8px;
+  padding-left: 12px;
 }

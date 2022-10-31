@@ -20,9 +20,9 @@ const Message = () => {
     },[messageList])
 
     return (
-        <div className="gide">
+        <div className='formMessage'>
             <FormMessage data={messageBody} setData={setMessageBody} setMessage={setMessageList}></FormMessage>
-            <div className='messageList' style={{display: 'flex', flexDirection: 'column',marginLeft: 'auto', marginRight: 'auto', maxWidth: '465px' }}>
+            <div className='messageList'>
                 {
                     messageList.map((e, i) => <Sms text={e.text} author={e.author} key={i}/>)
                 }
