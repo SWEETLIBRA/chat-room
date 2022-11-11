@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import Loader from '../components/Loader'
 import ChatDelete from './ChatDelete';
 import Chat from './Chat'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addChat } from '../slices/sliceFormChat';
 
 const ChatList = () => {
@@ -40,7 +40,10 @@ const ChatList = () => {
     ])
     const [loading, setLoading] = useState(null)
     const {chatId} = useParams()
-    
+    // получаем спискок чатов из стора редакс
+    const chatsFromStore = useSelector(state => state.chats)
+    console.log(chatsFromStore)
+
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
@@ -53,8 +56,11 @@ const ChatList = () => {
                 <WithLoading isLoading = {loading}>
                     <List className='chatList' sx={{ bgcolor: 'primary.main', display: 'flex', flexDirection: 'column', width: '150px', height: '100vh', borderRadius: '5px', overflowX: 'none', overflowY: 'scroll' }}>
                         <ListItem><h2 className='chats'>Чаты</h2></ListItem>
+                        {/* тут не совсем верно. я так понял у вас рендер списка чатов происходит из компонента chatDelete */}
+                        {/* Как бы список чатов в отдельном компоненте ок - но нейминг не лучший */}
+                        {/* тут в пропсы уже передаем не чаты из вашего хука setState а их хранилища */}
                         <>
-                            <ChatDelete chats={chats}/>
+                            <ChatDelete chats={chatsFromStore}/>
                             <Button type='submit' onClick={() => {
                               dispatch(addChat(newChat))  
                             }}>+</Button>
