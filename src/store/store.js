@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { applyMiddleware, createStore, compose } from "redux";
-import { chatReducer } from "../slices/sliceFormChat";
+import { chatReducer } from "./slices/sliceFormChat";
 import{ profileReducer } from "./reducer"
 
 // это не нужно больше, так как встроенно в тулкит
