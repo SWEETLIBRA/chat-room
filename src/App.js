@@ -9,7 +9,6 @@ import Toggler from './store/Toggler';
 
 
 function App() {
-  
   return (
       <div className="App">
           <NavBar />
